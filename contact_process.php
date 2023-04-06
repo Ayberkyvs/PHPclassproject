@@ -1,7 +1,6 @@
-<?php
-
+<?php  
     $to = "ayberkyavas9@gmail.com";
-    $from = $_REQUEST['email'];
+    $from = $_pscale['email'];
     $name = $_REQUEST['name'];
     $subject = $_REQUEST['subject'];
 	$csubject = $_REQUEST['subject'];

@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
 	<!-- main css -->
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/success.css">
 </head>
 
 <body>
@@ -64,91 +65,13 @@
 	</header>
 	<!--================ End Header Area =================-->
 
-    <!--================ Start Banner Area =================-->
-    <section class="banner_area">
-        <div class="banner_inner d-flex align-items-center">
-            <div class="container">
-                <div class="banner_content text-center">
-                    <h2>İletişimmmmm</h2>
-                    <div class="page_link">
-                        <a href="index.html">Ana Sayfa</a>
-                        <a href="contact.html">İletişim</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--================ End Banner Area =================-->
-    
-    <!--================Contact Area =================-->
-    <section class="contact_area section_gap">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3">
-                    <div class="contact_info">
-                        <div class="info_item">
-                            <i class="lnr lnr-home"></i>
-                            <h6>Izmir, Türkiye</h6>
-                            <p>Balçova</p>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-phone-handset"></i>
-                            <h6><a href="#">+90 5** *** ** 29</a></h6>
-                            <p>Pazartesi'den Cuma'ya 9-18</p>
-                        </div>
-                        <div class="info_item">
-                            <i class="lnr lnr-envelope"></i>
-                            <h6><a href="#">support@yavas.dev</a></h6>
-                            <p>Bize ne zaman ihtiyacın olursa !</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-9">
-                    <form 
-                    name="contact"
-                    class="row contact_form" 
-                    data-netlify="true" 
-                    method="POST" 
-                    data-netlify-honeypot="bot-field"
-                    action="/success/"
-                    id="contactForm">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Ad">
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-postanız">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <textarea class="form-control" name="message" id="message" rows="1" placeholder="Mesajınız"></textarea>
-                            </div>
-                        </div>
-                        <div class="col-md-12 text-right">
-                            <input class="d-none" name="bot-field"></input>
-                            <button type="submit" value="submit" class="primary_btn">
-                                <span>Gönder</span>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div id="mapBox" class="mapBox" 
-                data-lat="38.38783914359923"
-                data-lon="27.044589591966147" 
-                data-zoom="16" 
-                data-info="PO Box CT16122 Collins Street West, Victoria 8007, Australia."
-                data-mlat="38.38783914359923"
-                data-mlon="27.044589591966147">
-            </div>
-        </div>
-    </section>
-    <!--================Contact Area =================-->
-        
+    <div class="successContainer">
+		<div class="textContainer">
+		<h1>Mesajınız başarıyla gönderildi !</h1>
+		<h3><a href="contact.html"><i class="fa-solid fa-arrow-left"></i> Geri dön</a></h3>
+		</div>
+        <img src="img/success.gif" alt="Success">
+    </div>
         <!--================Footer Area =================-->
         <footer class="footer_area">
             <div class="container">
@@ -182,6 +105,7 @@
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://kit.fontawesome.com/ec613c6134.js" crossorigin="anonymous"></script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
