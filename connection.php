@@ -22,18 +22,6 @@ if ($mysqli->connect_error) {
 else{
     printf(".env file not found");
 }
-
-$ad = $_POST["name"];
-$soyad = $_POST["lname"];
-$tarih = $_POST["birthday"];
-$email = $_POST["email"];
-
-$sql = "INSERT INTO customers (name, lname, birthday, email) VALUES ('$ad', '$soyad', '$tarih', '$email')";
-if (mysqli_query($mysqli, $sql)) {
-      echo "New record created successfully";
-} else {
-      echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
-}
 mysqli_close($mysqli);
 
 ?>
