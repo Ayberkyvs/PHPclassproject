@@ -109,30 +109,36 @@
                     class="row contact_form" 
                     data-netlify="true" 
                     method="POST" 
-                    data-netlify-honeypot="bot-field"
-                    action="/success/"
+                    data-netlify-recaptcha="true"
+                    action="connect.php"
                     id="contactForm">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Ad">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Ad" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-postanız">
+                                <input type="text" class="form-control" id="lname" name="lname" placeholder="Soyad" required>
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu">
+                                <input type="date" class="form-control" id="birthday" name="birthday" placeholder="Doğum Tarihi" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" id="email" name="email" placeholder="E-posta" required>
                             </div>
                         </div>
                         <div class="col-md-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="subject" name="subject" placeholder="Konu">
+                            </div>
                             <div class="form-group">
                                 <textarea class="form-control" name="message" id="message" rows="1" placeholder="Mesajınız"></textarea>
                             </div>
                         </div>
                         <div class="col-md-12 text-right">
-                            <input class="d-none" name="bot-field"></input>
                             <button type="submit" value="submit" class="primary_btn">
                                 <span>Gönder</span>
                             </button>
+                            <div data-netlify-recaptcha="true"></div>
                         </div>
                     </form>
                 </div>
