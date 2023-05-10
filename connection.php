@@ -1,27 +1,37 @@
 <?php
-$envFile = __DIR__ . '/.env';
-if(file_exists($envFile)){
-$_ENV = parse_ini_file($envFile);
-
-$hostname = $_ENV['HOST'];
-$dbName = $_ENV['DATABASE'];
-$username = $_ENV['USERNAME'];
-$password = $_ENV['PASSWORD'];
+$hostname = "localhost";
+$dbName = "yavasdeveloper";
+$username = "root";
+$password = "Ayberk01205**..Manolya48**..3509..**";
 $port = 3306;
 
-$mysqli = mysqli_init();
-$mysqli->ssl_set(NULL, NULL, /etc/ssl/certs/ca-certificates.crt, NULL, NULL);
-$mysqli->real_connect($hostname, $username, $password, $dbName, $port);
+// Yeni database bağlantı isteği oluşturuyoruz.
+$mysqli = new mysqli($hostname, $username, $password, $dbName, $port);
 
 if ($mysqli->connect_error) {
     echo 'Connection Failed';
 } else {
     echo "Connected successfully";
 }
+
+// POST verilerini al
+$name = $_POST["name"]; // POST ile alınacak isim verisi
+$lname = $_POST["lname"]; // POST ile alınacak soyisim verisi
+$birthday = $_POST["birthday"]; // POST ile alınacak doğum tarihi verisi
+$email = $_POST["email"]; // POST ile alınacak email verisi
+
+// SQL sorgusunu oluştur
+$sql = "INSERT INTO customers (name, lname, birthday, email) VALUES ('$name', '$lname', '$birthday', '$email')";
+
+// Eğer veri ekleme başarılı ise success.html sayfasına yönlendirme sağlıyoruz.
+if (mysqli_query($mysqli, $sql)) {
+    header("Location: ../yavasdeveloper/success.html");
+    echo "Veri başarıyla eklendi.";
+} else {
+    echo "Hata: " . $sql . "<br>" . mysqli_error($mysqli);
 }
-else{
-    printf(".env file not found");
-}
+
+//bağlantıyı kapatıyoruz.
 mysqli_close($mysqli);
 
 ?>
